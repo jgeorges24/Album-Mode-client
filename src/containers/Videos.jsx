@@ -14,7 +14,7 @@ export class Videos extends Component {
     }
 
     
-// this way adds all the previouse vids plus new ones
+    // this way adds all the previouse vids plus new ones
 
 
     render(){
@@ -22,12 +22,12 @@ export class Videos extends Component {
         const xxx = this.props.videos.map((xvideo) => <VideoItem {...xvideo} />)
 
         return (
-            <div className="center">
+            <div className="cards" >
 
                 {/* <VideoForm /> */}
                 <br></br>
 
-                <h1> new entries </h1>
+                <h1> "new Music Video entries" </h1>
                 {xxx}
                 
             </div>
@@ -38,10 +38,13 @@ export class Videos extends Component {
 // allow me to grab the state from the store and add them to the props
 
 const mapStateToProps = ({videosReducer}) => {
+    console.log("mapStateToProps BEFORE---------->>>")
+    debugger
     return {
-    videos: videosReducer.videos,
-    requesting: videosReducer.requesting
+        videos: videosReducer.videos,
+        requesting: videosReducer.requesting
     }
+    console.log("mapStateToProps AFTER---------->>>")
 }
 // this is how we connect the compentnt to the store 
 export default connect(mapStateToProps, { fetchVideos, addVideo, })(Videos)

@@ -20,6 +20,7 @@ import  { addVideo } from "../actions/videos"
             e.preventDefault();
             // debugger
             this.props.addVideo(this.state)
+            console.log("handle submit submit button clicked AFTER---------->>>")
         
                 this.setState({
                     director: "",
@@ -27,7 +28,7 @@ import  { addVideo } from "../actions/videos"
                     rapper:"",
                     cover_art: ""
                 })
-
+            console.log(this.state, "RESET FORM INPUT TO CLEAR DATA TYPED")
     }
 
 
@@ -37,18 +38,21 @@ import  { addVideo } from "../actions/videos"
         // debugger
     //    const elName = e.target.name
     //    const elValue = e.target.value
+    console.log(this.state, "HANDLING INPUT CHANGE")
         this.setState({
             [e.target.name]: e.target.value
         })
+    console.log(this.state, "AFTER FORM INPUT HAS CHANGED")
     }
     
     render() {
             
         return (
+        <>
             <div className="v_form" id="v_form" style={{backgroundColor: "yellow"}}>
            
             
-            <h2>video form below</h2>
+            <h2>New Music Video Form</h2>
                 <form id="v_form" classname="v_form" onSubmit={this.handleSubmit}>
                     <lable htmlFor="director">Name of director</lable>
                     <input onChange={this.handleChange} type="text" name="director" id="director" value={this.state.director}/>
@@ -67,6 +71,7 @@ import  { addVideo } from "../actions/videos"
                 </form>
 
             </div>
+            </>
         )
     }
 }

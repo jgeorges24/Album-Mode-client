@@ -21,7 +21,7 @@ const videosReducer = (state = {videos: [], requesting: true}, action) => {
             }
             break;
         case "ADDING_VIDEOS":
-            console.log("ADDING_VIDEOS")
+            console.log("ADDING_VIDEOS videosReducer flag ------->>>>")
                 return {
                     ...state,
                     requesting: false,

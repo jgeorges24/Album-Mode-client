@@ -6,7 +6,7 @@
 
  const VideoItem = ({song, rapper, director, cover_art}) => {
     
-//   const [likes,setLikes] = useState(0)
+        //   const [likes,setLikes] = useState(0)
   
     
 
@@ -18,9 +18,8 @@
             <p>DIRECTOR: {director}</p>
             <br></br>
             <img src={cover_art} alt="cover art" width="400" height="400"/> 
-            <button onClick="">likes
-
-            </button> 
+            <p>*note to self GOOD PLACE FOR LIKES BUTTON, CHALLENGE YOURSELF</p>
+         
 
 
 
